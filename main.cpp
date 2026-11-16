@@ -1,5 +1,6 @@
 #include <iostream>
-#include "board.cpp"
+#include "board.h"
+#include "bot.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ int main(){
         cout << "Podaj rozmiar planszy (3,4,5)";
         cin >> rozmiar;
     };
+
 
 
 
