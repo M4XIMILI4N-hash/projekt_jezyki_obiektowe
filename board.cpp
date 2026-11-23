@@ -1,7 +1,7 @@
+#include <iostream>
+#include <cstdlib>
 #include "board.h"
-using namespace std;
 
-#include "board.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ Board::Board(int wymiar) {
             siatka[i][j] = ' ';
         }
     }
-}
+} 
 
 
 Board::~Board() {
@@ -49,4 +49,8 @@ ostream& operator<<(ostream& os, const Board& b) {
         }
     }
     return os;
+}
+
+bool Board::czy_wolne(int w, int k){
+
 }

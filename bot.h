@@ -15,8 +15,8 @@ class Bot{
         postac znak_bota;
     public: 
         Bot(int rozmiar, char znak);
-        ~Bot();
+        ~Bot() = default;
         char getZnak() const;
-        void wykonajRuch(int& wiersz, int& kolumna) const;
+        void wykonajRuch(int& wiersz, int& kolumna, int& rozmiar) const;
 
 };

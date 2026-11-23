@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #include <iostream>
 #include <stdexcept>
 
@@ -26,4 +26,9 @@ class Board{
         ~Board();
 
         friend ostream& operator<<(ostream& os, const Board& b);
+
+        bool czy_wolne(int w, int k) const;
+
+        
+
 };
