@@ -29,6 +29,8 @@ class Board{
 
         bool czy_wolne(int w, int k) const;
 
-        
+        bool postaw_znak(int w, int k, char znak);
+
+        bool koniec(char znak);
 
 };

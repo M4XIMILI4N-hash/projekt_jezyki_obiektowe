@@ -1,5 +1,6 @@
 #pragma once 
 #include <iostream>
+#include "board.h"
 #include <stdexcept>
 
 
@@ -14,9 +15,8 @@ class Bot{
         };
         postac znak_bota;
     public: 
-        Bot(int rozmiar, char znak);
+        Bot(char znak);
         ~Bot() = default;
         char getZnak() const;
-        void wykonajRuch(int& wiersz, int& kolumna, int& rozmiar) const;
-
+        void wykonajRuch(Board& plansza,int rozmiar) const;
 };

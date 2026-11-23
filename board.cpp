@@ -51,6 +51,69 @@ ostream& operator<<(ostream& os, const Board& b) {
     return os;
 }
 
-bool Board::czy_wolne(int w, int k){
+bool Board::czy_wolne(int w, int k) const{
+    if (siatka[w][k] == ' '){
+        return true;
+    }else{
+        return false;
+    }
+}
 
+bool Board::postaw_znak(int w, int k, char znak){
+    if(czy_wolne(w,k)){
+        siatka[w][k] = znak;
+        return true; 
+    }else{
+        return false;
+    }
+}
+
+bool Board::koniec(char znak){
+    bool status = true;
+    for(int w=0; w<aktualny_rozmiar; w++){    //wiersze 
+        status = true;
+        for(int k = 0; k<aktualny_rozmiar; k++){
+            if(siatka[w][k] != znak){
+                status = false;
+                break;
+            }
+        }
+        if (status == true){
+            return status;
+        }
+    }
+
+    for(int k = 0; k < aktualny_rozmiar; k++){ //kolumny 
+        status = true;
+        for(int w = 0; w < aktualny_rozmiar; w++){
+            if(siatka[w][k] != znak){
+                status = false;
+                break;
+            }
+        }
+        if (status == true){
+            return status;
+        }
+    }
+
+    status = true;
+    for(int wk = 0; wk < aktualny_rozmiar; wk++){ //skos od lewego do prawego 
+        if(siatka[wk][wk] != znak){
+            status = false;
+            break;
+        }
+    }
+    if(status == true){
+        return status;
+    }
+
+    status = true; 
+    for(int wk = 0; wk < aktualny_rozmiar; wk++){ //skos prawy lewy 
+        if(siatka[wk][aktualny_rozmiar-1-wk] != znak){
+            status = false;
+            break;
+        }
+    }
+
+    return status;
 }
