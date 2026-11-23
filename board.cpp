@@ -52,7 +52,7 @@ ostream& operator<<(ostream& os, const Board& b) {
 }
 
 bool Board::czy_wolne(int w, int k) const{
-    if (siatka[w][k] == ' '){
+    if ((w < aktualny_rozmiar and k < aktualny_rozmiar) and (siatka[w][k] == ' ')){
         return true;
     }else{
         return false;
@@ -116,4 +116,10 @@ bool Board::koniec(char znak){
     }
 
     return status;
+}
+
+void Board::cofnij_ruch(int w, int k) {
+    if (w >= 0 && w < aktualny_rozmiar && k >= 0 && k < aktualny_rozmiar) {
+        siatka[w][k] = ' ';
+    }
 }

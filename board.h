@@ -27,6 +27,8 @@ class Board{
 
         friend ostream& operator<<(ostream& os, const Board& b);
 
+        void cofnij_ruch(int w, int k);
+        
         bool czy_wolne(int w, int k) const;
 
         bool postaw_znak(int w, int k, char znak);
